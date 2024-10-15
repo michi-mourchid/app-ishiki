@@ -25,7 +25,7 @@ public class UserMapper {
                 .lastName(user.getLastName())
                 .username(user.getUsername())
                 .email(user.getEmail())
-                .subscriptionType(user.getSubscriptionType())
-                .createdAt(user.getCreatedAt()).build();
+                .subscriptionType(user.getSubscription_type())
+                .createdAt(user.getCreated_at()).build();
     }
 }

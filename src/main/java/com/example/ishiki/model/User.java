@@ -20,10 +20,10 @@ public class User {
     private String lastName;
     private String email;
     private String role;
-    private String subscriptionType;
-    private Date createdAt = new Date();
+    private String subscription_type;
+    private Date created_at = new Date();
 
-    public User(long id, String username, String password, String firstName, String lastName, String email, String subscriptionType, Date createdAt, String role) {
+    public User(long id, String username, String password, String firstName, String lastName, String email, String subscription_type, Date created_at, String role) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -31,8 +31,8 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.role = role;
-        this.subscriptionType = subscriptionType;
-        this.createdAt = createdAt;
+        this.subscription_type = subscription_type;
+        this.created_at = created_at;
     }
 
     public User(Builder builder){
@@ -42,8 +42,8 @@ public class User {
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.email = builder.email;
-        this.subscriptionType = builder.subscriptionType;
-        this.createdAt = builder.createdAt;
+        this.subscription_type = builder.subscriptionType;
+        this.created_at = builder.createdAt;
         this.role = builder.role;
     }
 

@@ -15,6 +15,7 @@ public class Card {
     private long id;
     private String title;
     private String content;
+    @Column(name="createdat")
     private Date createdAt = new Date();
     private String img;
     @ManyToOne(cascade = CascadeType.MERGE)
