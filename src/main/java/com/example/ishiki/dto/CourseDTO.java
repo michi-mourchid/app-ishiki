@@ -10,7 +10,7 @@ public class CourseDTO {
     private long id;
     private String name;
     private String content;
-    private Field field;
+    private long field_id;
 }
 
 

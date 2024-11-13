@@ -6,7 +6,6 @@ import com.example.ishiki.model.User;
 public class UserMapper {
     public static User fromUserDTO(UserDTO dto, Long id) {
         return new User.Builder()
-                .id(id)
                 .username(dto.getUsername())
                 .firstName(dto.getFirstName())
                 .lastName(dto.getLastName())

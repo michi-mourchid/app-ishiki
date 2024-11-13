@@ -13,5 +13,5 @@ public class CardDTO {
     private String content;
     private Date createdAt = new Date();
     private String img;
-
+    private long course_id;
 }

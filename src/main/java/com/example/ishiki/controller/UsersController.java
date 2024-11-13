@@ -1,5 +1,6 @@
 package com.example.ishiki.controller;
 
+import com.example.ishiki.dto.UserDTO;
 import com.example.ishiki.model.User;
 import com.example.ishiki.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +26,12 @@ public class UsersController {
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public User createUser(@RequestBody UserDTO user) {
         return userService.saveUser(user);
     }
 
     @PutMapping
-    public User updateUser(@RequestBody User user) {
+    public User updateUser(@RequestBody UserDTO user) {
         return userService.saveUser(user);
     }
 

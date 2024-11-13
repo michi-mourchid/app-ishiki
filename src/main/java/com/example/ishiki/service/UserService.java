@@ -30,18 +30,10 @@ public class UserService {
     }
 
     @Transactional
-    public void saveUser(UserDTO userDTO) {
+    public User saveUser(UserDTO userDTO) {
         User user;
         try {
             user = UserMapper.fromUserDTO(userDTO,null);
-            userDAO.save(user);
-        } catch (Exception e){
-            throw new RuntimeException("Error while saving user");
-        }
-    }
-
-    public User saveUser(User user){
-        try {
             return userDAO.save(user);
         } catch (Exception e){
             throw new RuntimeException("Error while saving user");

@@ -33,4 +33,9 @@ public class CardController {
     public void deleteCard(@PathVariable Long id) {
         cardService.deleteCard(id);
     }
+
+    @PutMapping
+    public Card updateCard(@RequestBody Card card) {
+        return cardService.updateCard(card);
+    }
 }
