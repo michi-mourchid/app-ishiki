@@ -1,6 +1,7 @@
 package com.example.ishiki.controller;
 
 import com.example.ishiki.dto.CourseDTO;
+import com.example.ishiki.model.Card;
 import com.example.ishiki.model.Course;
 import com.example.ishiki.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,11 @@ public class CourseController {
     @GetMapping("/{id}")
     public Course getCourseById(@PathVariable Long id) {
         return courseService.getCourseById(id);
+    }
+
+    @GetMapping("/{id}/cards")
+    public List<Card> getCardsByCourseId(@PathVariable Long id) {
+        return courseService.getCardsFromCourse(id);
     }
 
     @PostMapping

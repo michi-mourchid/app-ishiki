@@ -15,7 +15,6 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name = "course_seq", sequenceName = "courses_seq", allocationSize = 1)
-    @JsonIgnore
     private long id;
     private String name;
     private String content;

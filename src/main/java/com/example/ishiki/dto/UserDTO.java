@@ -14,7 +14,7 @@ public class UserDTO {
     private String lastName;
     private String email;
     private String subscriptionType;
-    private Date createdAt = new Date();
+    private Date createdAt;
     private String role;
 
 

@@ -14,7 +14,6 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name = "card_seq", sequenceName = "cards_seq", allocationSize = 1)
-    @JsonIgnore
     private long id;
     private String title;
     private String content;

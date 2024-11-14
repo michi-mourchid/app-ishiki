@@ -5,6 +5,7 @@ import com.example.ishiki.dto.UserDTO;
 import com.example.ishiki.mapper.UserMapper;
 import com.example.ishiki.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,6 +17,11 @@ public class UserService {
 
     @Autowired
     private UserDAO userDAO;
+    private final PasswordEncoder passwordEncoder;
+
+    public UserService(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
 
     public List<User> getAllUsers() {
         return userDAO.findAll();
@@ -33,7 +39,12 @@ public class UserService {
     public User saveUser(UserDTO userDTO) {
         User user;
         try {
+            if(userDAO.findByUsername(userDTO.getUsername()).isPresent()) {
+                throw new Exception("User already exists");
+            }
             user = UserMapper.fromUserDTO(userDTO,null);
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+
             return userDAO.save(user);
         } catch (Exception e){
             throw new RuntimeException("Error while saving user");

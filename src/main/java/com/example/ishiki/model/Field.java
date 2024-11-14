@@ -18,7 +18,6 @@ public class Field {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name = "field_seq", sequenceName = "fields_seq", allocationSize = 1)
-    @JsonIgnore
     private Long id;
     private String name;
     private String description;

@@ -4,6 +4,7 @@ import com.example.ishiki.dto.UserDTO;
 import com.example.ishiki.model.User;
 import com.example.ishiki.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
