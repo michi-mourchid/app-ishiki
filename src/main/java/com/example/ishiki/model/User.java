@@ -1,11 +1,13 @@
 package com.example.ishiki.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -25,6 +27,9 @@ public class User {
     private String role;
     private String subscription_type;
     private Date created_at = new Date();
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<Interaction> interactions;
 
     public User(long id, String username, String password, String firstName, String lastName, String email, String subscription_type, Date created_at, String role) {
         this.id = id;
